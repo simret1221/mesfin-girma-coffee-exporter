@@ -1,0 +1,8 @@
+{
+  "name": "Mesfin Girma Gemeda Coffee Supplies & Exporter",
+  "description": "Premium Ethiopian specialty coffee export platform connecting international buyers with Grade 1 coffees from Yirgacheffe, Guji, Sidama, Shakiso, Arsi, and Harar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

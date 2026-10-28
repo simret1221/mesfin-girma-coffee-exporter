@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-forest: #14281d;
+    --color-forest-dark: #0a140f;
+    --color-forest-mid: #1e3f2d;
+    --color-forest-light: #2d563f;
+    --color-cream: #fbf9f5;
+    --color-cream-sand: #f4efe6;
+    --color-coffee: #382417;
+    --color-coffee-dark: #27170e;
+    --color-coffee-bean: #3e2723;
+    --color-gold: #c8963e;
+    --color-gold-hover: #b08130;
+    --color-gold-light: #dfb56c;
+    --color-slate-muted: #607274;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: #1a1e1b;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif, .font-editorial {
+    font-family: 'Playfair Display', Georgia, Cambria, serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom cinematic & editorial utilities */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Subtle image zoom on hover for editorial cards */
+.img-zoom-hover {
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-zoom-hover:hover {
+  transform: scale(1.04);
+}
+
+/* Clean glass effect */
+.glass-nav {
+  background: rgba(13, 26, 19, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Subtle line accents */
+.editorial-line {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(200, 150, 62, 0.6) 0%, rgba(200, 150, 62, 0) 100%);
+}
+
+/* =========================================================================
+   CINEMATIC HERO ANIMATIONS & KEN BURNS MOTION
+   ========================================================================= */
+
+@keyframes heroMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-hero-marquee {
+  display: flex;
+  width: max-content;
+  animation: heroMarquee 36s linear infinite;
+  will-change: transform;
+}
+
+.animate-hero-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes kenBurnsSlow1 {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.14) translate3d(-1%, -0.8%, 0);
+  }
+}
+
+@keyframes kenBurnsSlow2 {
+  0% {
+    transform: scale(1.15) translate3d(0.8%, 0, 0);
+  }
+  100% {
+    transform: scale(1.05) translate3d(-0.8%, -0.5%, 0);
+  }
+}
+
+@keyframes kenBurnsSlow3 {
+  0% {
+    transform: scale(1.05) translate3d(0, 0.8%, 0);
+  }
+  100% {
+    transform: scale(1.15) translate3d(1%, -0.8%, 0);
+  }
+}
+
+.ken-burns-1 {
+  animation: kenBurnsSlow1 7.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform;
+}
+
+.ken-burns-2 {
+  animation: kenBurnsSlow2 7.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform;
+}
+
+.ken-burns-3 {
+  animation: kenBurnsSlow3 7.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform;
+}
+
+@keyframes heroSlideProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-hero-progress {
+  animation: heroSlideProgress 5.5s linear forwards;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-marquee {
+    animation-duration: 90s;
+  }
+  .ken-burns-1,
+  .ken-burns-2,
+  .ken-burns-3 {
+    animation: none !important;
+    transform: scale(1.05) !important;
+  }
+  .animate-hero-progress {
+    animation: none;
+    width: 100%;
+  }
+}
+

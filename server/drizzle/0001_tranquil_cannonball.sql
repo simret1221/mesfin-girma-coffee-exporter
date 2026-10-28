@@ -1,0 +1,3 @@
+ALTER TABLE "coffee_products" ADD CONSTRAINT "coffee_products_origin_id_origins_id_fk" FOREIGN KEY ("origin_id") REFERENCES "public"."origins"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "inquiry_items" ADD CONSTRAINT "inquiry_items_inquiry_id_inquiries_id_fk" FOREIGN KEY ("inquiry_id") REFERENCES "public"."inquiries"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "inquiry_items" ADD CONSTRAINT "inquiry_items_coffee_product_id_coffee_products_id_fk" FOREIGN KEY ("coffee_product_id") REFERENCES "public"."coffee_products"("id") ON DELETE no action ON UPDATE no action;
