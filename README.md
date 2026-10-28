@@ -1,20 +1,56 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Mesfin Girma Coffee Exporter
 
-# Run and deploy your AI Studio app
+A website and application for Mesfin Girma Coffee Exporter, showcasing Ethiopian coffee origins, products, company information, and buyer inquiry features.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/864bfa6c-2eb6-4316-993c-3da3ea71a8a3
+- Explore Ethiopian coffee origins and available coffees.
+- View coffee product details and processing information.
+- Learn about the company, its locations, and coffee processes.
+- Submit buyer inquiries and explore the buyer workflow.
+- Provide authentication and dashboard interfaces for buyers and staff.
+
+## Technology Stack
+
+**Frontend**
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+
+**Backend**
+- Node.js
+- Express
+- TypeScript
+- PostgreSQL
+- Drizzle ORM
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+### Requirements
 
+- Node.js and npm
+- PostgreSQL
+- Git
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/simret1221/mesfin-girma-coffee-exporter.git
+cd mesfin-girma-coffee-exporter
+```
+
+### 2. Install frontend dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure the backend
+
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file inside the `server`
